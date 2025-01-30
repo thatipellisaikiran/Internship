@@ -1,0 +1,8 @@
+flask
+mysql-connector-python
+sentence-transformers
+faiss-cpu
+chromadb
+openai
+transformers
+torch

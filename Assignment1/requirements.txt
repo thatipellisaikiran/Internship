@@ -1,0 +1,8 @@
+flask
+pandas
+numpy
+scikit-learn==1.4.2
+nltk
+sqlite3
+requests
+gunicorn
