@@ -138,7 +138,6 @@ The RAG chatbot system uses vector databases to store text data, retrieves the m
       5)SQLite3
 
 # Software:
-# ----------
 
     SQLite3 for storing chat history
 
