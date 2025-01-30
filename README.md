@@ -1,5 +1,5 @@
 # End-to-End Sentiment Analysis Pipeline & RAG Chatbot
-# ---------------------------------------------------
+
 This repository contains two projects:
 
 # 1) End-to-End Sentiment Analysis Pipeline :
@@ -9,15 +9,15 @@ This repository contains two projects:
       A chatbot system that uses vector databases to fetch relevant answers based on user queries and generates responses with a pre-trained generative model.
 
 # Project 1: End-to-End Sentiment Analysis Pipeline
-# ---------------------------------------------------
+
   
 # Overview
-# ----------
+
         The End-to-End Sentiment Analysis Pipeline classifies IMDB movie reviews into positive or negative sentiment using a machine learning model. 
         It includes steps for data collection, preprocessing, training, evaluation, and serving the model through an API.
 
 # Features
-# -----------
+
 
 1)Data Collection: Utilizes the IMDB dataset for movie reviews.
 
@@ -100,15 +100,14 @@ The evaluation results (accuracy, precision, recall, and F1-score) will be displ
 
 
 # Project 2: RAG (Retrieval-Augmented Generation) Chatbot:
-# --------------------------------------------------------
 
 # Overview
------------
+
 
 The RAG chatbot system uses vector databases to store text data, retrieves the most relevant documents for a given query, and generates human-like responses using a generative model.
 
 # Features
-# ---------
+
 
 
         1)Text Corpus: Preprocesses and stores a text corpus (e.g., Wikipedia, documentation) for retrieval.
@@ -121,12 +120,12 @@ The RAG chatbot system uses vector databases to store text data, retrieves the m
 
 
 # Requirements:
-# -------------
+
 
       Python 3.x
 
 # Libraries:
-# -----------
+
 
       1)Flask
       
@@ -144,54 +143,53 @@ The RAG chatbot system uses vector databases to store text data, retrieves the m
     SQLite3 for storing chat history
 
 # Install dependencies:
-# ----------------------
+
 
         pip install -r requirements.txt
 
 
 # Set up the SQLite3 Database Create tables for storing chat history:
-# -----------------------------------------------------------------------
+
 
           mysql -u root -p < create_tables.sql
 
 # Steps to Run:
-# ----------------
+
 
 Prepare the Data: Preprocess the text corpus (e.g., Wikipedia or documentation) and clean it for embedding.
 
 
 # Run prepare_data.py:
-# -------------------
+
 
     python prepare_data.py
 
 
 # Vector Database Setup: Embed the text data and store it in Faiss/Chroma/Milvus:
-# ---------------------------------------------------------------------------------
+
 
             python vector_db_setup.py
 
 
 # Start the Flask API:
-# ---------------------
 
-        python app.py
+       python app.py
 
 
 # Test the Chatbot: Send a POST request to the /chat endpoint with the user query:
-# ---------------------------------------------------------------------------------
 
-        curl -X POST -H "Content-Type: application/json" -d '{"query": "What is AI?"}' http://localhost:5000/chat
+
+ curl -X POST -H "Content-Type: application/json" -d '{"query": "What is AI?"}' http://localhost:5000/chat
 
 
 # View Chat History: You can view chat history by sending a GET request to /history:
-# ---------------------------------------------------------------------------------------
+
 
                curl- http://localhost:5000/history
 
 
 # Chatbot Architecture:
-# -------------------------
+
             1)Embedding Generation: Uses the sentence-transformers library to create embeddings for each document chunk.
 
             2)Query Handling: When a user asks a question, the query is embedded, and the top-k relevant documents are retrieved from the vector store.
@@ -200,8 +198,7 @@ Prepare the Data: Preprocess the text corpus (e.g., Wikipedia or documentation) 
 
 
 # Project Structure:
-# -------------------
-            
+
             1)prepare_data.py: Preprocesses and cleans the dataset.
             
             2)vector_db_setup.py: Embeds data and stores it in the vector database.
@@ -214,7 +211,6 @@ Prepare the Data: Preprocess the text corpus (e.g., Wikipedia or documentation) 
 
 
 # Testing:
-# -----------
 
 # Unit tests for embedding generation and retrieval can be found in test_embedding.py. To run tests:
 
